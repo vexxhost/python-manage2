@@ -62,7 +62,7 @@ class License(object):
                          params={'ip': ip_address, 'output': 'json'},
                          auth=manage2.auth).json()
 
-        if r['status'] != 1:
+        if r['status'] != '1':
             raise RuntimeError(r['reason'])
         return License(r['licenseid'], r)
 
